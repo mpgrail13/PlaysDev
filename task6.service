@@ -1,0 +1,10 @@
+[Unit]
+Description=Logs
+[Service]
+User=root
+ExecStart=/home/ubuntu/task6.sh
+Restart=on-failure
+RestartSec=1s
+
+[Install]
+WantedBy=multi-user.target

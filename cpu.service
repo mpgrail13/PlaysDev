@@ -1,0 +1,10 @@
+[Unit]
+Description=Cpu
+[Service]
+User=root
+ExecStart=/www/data/second.sh
+Restart=on-failure
+RestartSec=1s
+
+[Install]
+WantedBy=multi-user.target
