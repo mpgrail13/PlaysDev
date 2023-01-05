@@ -1,0 +1,36 @@
+2023/01/05 09:53:47 [notice] 1#1: using the "epoll" event method
+2023/01/05 09:53:47 [notice] 1#1: nginx/1.23.3
+2023/01/05 09:53:47 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2023/01/05 09:53:47 [notice] 1#1: OS: Linux 5.15.0-1026-aws
+2023/01/05 09:53:47 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/01/05 09:53:47 [notice] 1#1: start worker processes
+2023/01/05 09:53:47 [notice] 1#1: start worker process 29
+2023/01/05 09:54:45 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/01/05 09:54:45 [notice] 29#29: gracefully shutting down
+2023/01/05 09:54:45 [notice] 29#29: exiting
+2023/01/05 09:54:45 [notice] 29#29: exit
+2023/01/05 09:54:45 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2023/01/05 09:54:45 [notice] 1#1: worker process 29 exited with code 0
+2023/01/05 09:54:45 [notice] 1#1: exit
+2023/01/05 12:19:42 [notice] 1#1: using the "epoll" event method
+2023/01/05 12:19:42 [notice] 1#1: nginx/1.23.3
+2023/01/05 12:19:42 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2023/01/05 12:19:42 [notice] 1#1: OS: Linux 5.15.0-1026-aws
+2023/01/05 12:19:42 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/01/05 12:19:42 [notice] 1#1: start worker processes
+2023/01/05 12:19:42 [notice] 1#1: start worker process 29
+2023/01/05 12:36:07 [error] 29#29: *7 open() "/usr/share/nginx/html/error" failed (2: No such file or directory), client: 149.34.244.156, server: localhost, request: "GET /error HTTP/1.1", host: "52.28.10.213"
+2023/01/05 12:39:08 [error] 29#29: *9 open() "/usr/share/nginx/html/error" failed (2: No such file or directory), client: 149.34.244.156, server: localhost, request: "GET /error HTTP/1.1", host: "52.28.10.213"
+2023/01/05 12:40:12 [error] 29#29: *9 open() "/usr/share/nginx/html/error321" failed (2: No such file or directory), client: 149.34.244.156, server: localhost, request: "GET /error321 HTTP/1.1", host: "52.28.10.213"
+2023/01/05 12:58:34 [error] 29#29: *18 open() "/usr/share/nginx/html/error" failed (2: No such file or directory), client: 149.34.244.156, server: localhost, request: "GET /error HTTP/1.1", host: "52.28.10.213"
+2023/01/05 12:58:37 [error] 29#29: *18 open() "/usr/share/nginx/html/error2" failed (2: No such file or directory), client: 149.34.244.156, server: localhost, request: "GET /error2 HTTP/1.1", host: "52.28.10.213"
+2023/01/05 12:58:43 [error] 29#29: *18 open() "/usr/share/nginx/html/:3000" failed (2: No such file or directory), client: 149.34.244.156, server: localhost, request: "GET /:3000 HTTP/1.1", host: "52.28.10.213"
+2023/01/05 13:06:24 [error] 29#29: *19 open() "/usr/share/nginx/html/Core/Skin/Login.aspx" failed (2: No such file or directory), client: 43.154.173.181, server: localhost, request: "HEAD /Core/Skin/Login.aspx HTTP/1.1", host: "52.28.10.213:80"
+2023/01/05 13:07:44 [error] 29#29: *20 open() "/usr/share/nginx/html/aqxtm8" failed (2: No such file or directory), client: 5.119.227.31, server: localhost, request: "POST /aqxtm8 HTTP/1.1", host: "fhu8ev23n.com"
+2023/01/05 13:07:44 [error] 29#29: *21 open() "/usr/share/nginx/html/tcgc29" failed (2: No such file or directory), client: 5.119.227.31, server: localhost, request: "POST /tcgc29 HTTP/1.1", host: "www.google.com"
+2023/01/05 13:07:47 [error] 29#29: *23 open() "/usr/share/nginx/html/r8behp" failed (2: No such file or directory), client: 5.119.227.31, server: localhost, request: "POST /r8behp HTTP/1.1", host: "www.ws.k12.ny.us"
+2023/01/05 13:08:50 [error] 29#29: *24 open() "/usr/share/nginx/html/wpje6k" failed (2: No such file or directory), client: 5.119.227.31, server: localhost, request: "POST /wpje6k HTTP/1.1", host: "fhu8ev23n.com"
+2023/01/05 13:08:50 [error] 29#29: *25 open() "/usr/share/nginx/html/yzgycc" failed (2: No such file or directory), client: 5.119.227.31, server: localhost, request: "POST /yzgycc HTTP/1.1", host: "www.google.com"
+2023/01/05 13:08:51 [error] 29#29: *26 open() "/usr/share/nginx/html/u5c2zy" failed (2: No such file or directory), client: 5.119.227.31, server: localhost, request: "POST /u5c2zy HTTP/1.1", host: "app.telekom.mk"
+2023/01/05 13:18:43 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/01/05 13:18:43 [notice] 29#29: gracefully shutting down
