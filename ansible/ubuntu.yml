@@ -1,0 +1,16 @@
+- name: Runs Docker-compose
+  hosts: server1
+  become: yes
+
+  tasks:
+    - name: Update
+      apt:
+        update_cache: yes
+    - name: Install docker-compose
+      shell: "apt install docker-compose -y"
+    - name: Clone repository
+      shell: "git clone https://github.com/mpgrail13/task14.git"
+    - name: Start Docker-compose
+      shell:
+        chdir: task14/compose
+        cmd: docker-compose up -d

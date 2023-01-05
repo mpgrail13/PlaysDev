@@ -1,0 +1,77 @@
+- name: Run Docker-compose
+  hosts: all
+  become: yes
+
+  tasks:
+  - block: # Debian
+    - name: Update
+      apt:
+        update_cache: yes
+    - name: Install docker-compose
+      shell: "apt install docker-compose -y"
+    - name: Clone repository
+      shell: "git clone https://github.com/mpgrail13/task14.git"
+    - name: Start Docker-compose
+      shell:
+        chdir: task14/compose
+        cmd: docker-compose up -d
+    when: ansible_os_family == "Debian"
+
+  - block: # RedHat
+    - name: Update all packages
+      yum:
+        name: '*'
+        state: latest
+        update_only: yes
+
+    - name: Install Git
+      yum:
+        name: git
+        state: present
+
+    - name: Download repo
+      shell: "git clone https://github.com/mpgrail13/task14.git"
+
+    - name: Ensure a list of yum packages are installed
+      yum:
+        name: "{{ packages }}"
+        state: latest
+        update_cache: yes
+      vars:
+        packages:
+        - python-pip
+        - yum-utils
+        - device-mapper-persistent-data
+        - lvm2
+        - amazon-linux-extras
+
+    - name: Add extras repository
+      shell: yum-config-manager --enable extras
+
+    - name: Install docker-ce (centos) via amazon-linux-extras packages
+      shell: "amazon-linux-extras install docker=18.06.1 -y"
+
+    - name: Enable Docker CE service at startup
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Ensure Python pip packages are installed
+      pip:
+       name: "{{ packages }}"
+      vars:
+       packages:
+       - boto
+       - boto3
+       - docker-compose
+
+    - name: Move docker-compose
+      shell: "cp /usr/local/bin/docker-compose /usr/bin/"
+
+    - name: Docker-compose
+      shell: "docker-compose up -d"
+      args:
+        chdir: task14/compose/
+
+    when: ansible_os_family == "RedHat"
