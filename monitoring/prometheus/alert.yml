@@ -1,0 +1,16 @@
+groups:
+- name: test
+  rules:
+  - alert: HighCPUUsage
+    expr: 100 - (avg by (name) (rate(node_cpu_seconds_total{mode="idle",name="master"}[1m])) * 100) > 50
+    for: 30s
+    annotations:
+      summary: "High CPU usage on instance {{ $labels.name }}"
+      description: "Instance has a average CPU usage (current value: {{ $value }}%)"
+
+  - alert: HignMemoryUsage
+    expr: 100 -(node_memory_MemAvailable_bytes{name="worker"} / node_memory_MemTotal_bytes{name="worker"}) * 100 > 45
+    for: 10s
+    annotations:
+      summary: "High Memory usage on instance {{ $labels.name }}"
+      description: "Instance has a average memory usage (current value: {{ $value }}%)" 

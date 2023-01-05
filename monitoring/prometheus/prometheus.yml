@@ -1,0 +1,21 @@
+scrape_configs:
+  - job_name: node
+    scrape_interval: 5s
+    static_configs:
+      - targets: ["node-exporter:9100"]
+        labels:
+          name: master
+
+      - targets: ["3.73.33.100:9100"]
+        labels:
+          name: worker
+
+rule_files:
+  - 'alert.yml'
+
+alerting:
+  alertmanagers:
+    - scheme: http
+      static_configs:
+        - targets:
+          - "alertmanager:9093"
