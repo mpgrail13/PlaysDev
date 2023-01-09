@@ -1,0 +1,13 @@
+datasources:
+-  access: 'proxy'
+   editable: true
+   name: 'Loki'
+   type: loki
+   url: http://playsdevtask25.ddns.net:3100
+
+-  access: proxy
+   editable: true
+   is_default: true
+   name: Prometheus
+   type: prometheus
+   url: http://playsdevtask25.ddns.net:9090
